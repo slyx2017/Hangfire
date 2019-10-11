@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using Hangfire.Dashboard;
 using Hangfire.Annotations;
+using Common.LogHelper;
 
 //[assembly: OwinStartup(typeof(WebApplication1.Startup))]
 
@@ -45,10 +46,11 @@ namespace WebApplication1
             }
         }
         public void Test()
-
         {
+            var log = LogFactory.GetLogger("");
             string date = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            Debug.WriteLine(date + " AAAA");
+            //Debug.WriteLine(date + " AAAA");
+            log.Info("Log:" + date);
         }
     }
 }
